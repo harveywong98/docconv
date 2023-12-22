@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"net/http"
 	"os"
 	"path"
 	"strings"
@@ -99,6 +100,17 @@ func Convert(r io.Reader, mimeType string, readability bool) (*Response, error) 
 		var b []byte
 		b, err = io.ReadAll(r)
 		body = string(b)
+
+	default:
+		// auto-detection from first 512 bytes
+		buffer := make([]byte, 512)
+		if _, err := r.Read(buffer); err != nil {
+			return nil, err
+		}
+		// recursive call convert once
+		if detect := http.DetectContentType(buffer); mimeType != detect {
+			return Convert(r, detect, readability)
+		}
 	}
 
 	if err != nil {

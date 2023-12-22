@@ -1,4 +1,4 @@
-module code.sajari.com/docconv/v2
+module github.com/Servicewall/docconv/v2
 
 go 1.21
 
