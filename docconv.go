@@ -1,4 +1,4 @@
-package docconv // import "code.sajari.com/docconv/v2"
+package docconv // import "github.com/Servicewall/docconv/v2"
 
 import (
 	"encoding/json"
