@@ -1,6 +1,7 @@
 package docconv // import "github.com/Servicewall/docconv/v2"
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -103,13 +104,10 @@ func Convert(r io.Reader, mimeType string, readability bool) (*Response, error) 
 
 	default:
 		// auto-detection from first 512 bytes
-		buffer := make([]byte, 512)
-		if _, err := r.Read(buffer); err != nil {
-			return nil, err
-		}
-		// recursive call convert once
-		if detect := http.DetectContentType(buffer); mimeType != detect {
-			return Convert(r, detect, readability)
+		b, _ := io.ReadAll(r)
+		if detect := http.DetectContentType(b); mimeType != detect {
+			// recursive call convert once
+			return Convert(bytes.NewReader(b), detect, readability)
 		}
 	}
 
