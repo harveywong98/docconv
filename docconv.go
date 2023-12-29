@@ -52,6 +52,8 @@ func MimeTypeByExtension(filename string) string {
 		return "image/tiff"
 	case ".txt":
 		return "text/plain"
+	case ".xlsx":
+		return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 	}
 	return "application/octet-stream"
 }
@@ -72,6 +74,9 @@ func Convert(r io.Reader, mimeType string, readability bool) (*Response, error) 
 
 	case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
 		body, meta, err = ConvertPptx(r)
+
+	case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+		body, meta, err = ConvertXlsx(r)
 
 	case "application/vnd.oasis.opendocument.text":
 		body, meta, err = ConvertODT(r)
