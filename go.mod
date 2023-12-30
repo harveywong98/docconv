@@ -7,6 +7,7 @@ require (
 	cloud.google.com/go/errorreporting v0.3.0
 	github.com/JalfResi/justext v0.0.0-20170829062021-c0282dea7198
 	github.com/advancedlogic/GoOse v0.0.0-20191112112754-e742535969c1
+	github.com/gen2brain/go-unarr v0.2.0
 	github.com/google/go-cmp v0.5.9
 	github.com/gorilla/mux v1.8.0
 	github.com/otiai10/gosseract/v2 v2.2.4

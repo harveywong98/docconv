@@ -54,6 +54,8 @@ func MimeTypeByExtension(filename string) string {
 		return "text/plain"
 	case ".xlsx":
 		return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+	case ".zip", ".7z", ".rar":
+		return "application/zip"
 	}
 	return "application/octet-stream"
 }
@@ -101,6 +103,9 @@ func Convert(r io.Reader, mimeType string, readability bool) (*Response, error) 
 
 	case "image/jpeg", "image/png", "image/tif", "image/tiff":
 		body, meta, err = ConvertImage(r)
+
+	case "application/zip":
+		body, meta, err = ConvertZip(r)
 
 	case "text/plain":
 		var b []byte
