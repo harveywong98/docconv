@@ -17,7 +17,7 @@ func ConvertZip(r io.Reader) (string, map[string]string, error) {
 	var text string
 	var meta map[string]string
 	// iterate files and extract text
-	for e := a.Entry(); e != io.EOF; e = a.Entry() {
+	for e := a.Entry(); e == nil; e = a.Entry() {
 		if data, err := a.ReadAll(); err == nil {
 			if res, err := Convert(bytes.NewReader(data), MimeTypeByExtension(a.Name()), false); err == nil {
 				text += a.Name() + "\r\n" + res.Body + "\r\n"
