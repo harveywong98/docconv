@@ -14,7 +14,7 @@ var config = struct {
 	langs []string
 	sync.Mutex
 }{
-	langs: []string{"eng"},
+	langs: []string{"eng", "chi_sim"},
 }
 
 func SetImageLanguages(l ...string) {
