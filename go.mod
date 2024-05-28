@@ -5,6 +5,7 @@ go 1.21
 require (
 	cloud.google.com/go/compute/metadata v0.2.3
 	cloud.google.com/go/errorreporting v0.3.0
+	github.com/EndFirstCorp/doc2txt v0.0.0-20210522214125-5d2d4043bb03
 	github.com/JalfResi/justext v0.0.0-20170829062021-c0282dea7198
 	github.com/advancedlogic/GoOse v0.0.0-20191112112754-e742535969c1
 	github.com/gen2brain/go-unarr v0.2.0
@@ -12,7 +13,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/otiai10/gosseract/v2 v2.2.4
 	github.com/richardlehane/mscfb v1.0.3
-	github.com/richardlehane/msoleps v1.0.4-0.20231124170528-c8ca5a164365
+	github.com/richardlehane/msoleps v1.0.1
 	golang.org/x/net v0.17.0
 	google.golang.org/protobuf v1.30.0
 )
@@ -31,6 +32,7 @@ require (
 	github.com/googleapis/gax-go/v2 v2.7.1 // indirect
 	github.com/jaytaylor/html2text v0.0.0-20200412013138-3577fbdbcff7 // indirect
 	github.com/levigross/exp-html v0.0.0-20120902181939-8df60c69a8f5 // indirect
+	github.com/mattetti/filebuffer v1.0.0 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/olekukonko/tablewriter v0.0.4 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
