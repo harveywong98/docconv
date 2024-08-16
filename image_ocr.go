@@ -1,4 +1,4 @@
-//go:build ocr
+//go:build xtt
 
 package docconv
 
