@@ -1,4 +1,4 @@
-module github.com/Servicewall/docconv/v2
+module github.com/harveywong98/docconv/v2
 
 go 1.21
 
@@ -11,7 +11,7 @@ require (
 	github.com/gen2brain/go-unarr v0.2.0
 	github.com/google/go-cmp v0.5.9
 	github.com/gorilla/mux v1.8.0
-	github.com/otiai10/gosseract/v2 v2.2.4
+	github.com/otiai10/gosseract/v2 v2.4.1
 	github.com/richardlehane/mscfb v1.0.3
 	github.com/richardlehane/msoleps v1.0.1
 	golang.org/x/net v0.17.0

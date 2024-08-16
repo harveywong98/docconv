@@ -1,4 +1,4 @@
-//go:build ocr
+//go:build re2_cgo
 
 package docconv
 
